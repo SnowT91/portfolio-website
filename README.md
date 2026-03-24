@@ -33,3 +33,7 @@ This project was created to present my frontend development skills, showcase my 
 ## Live Demo
 
 [Open Portfolio](https://potfolio-website-archyteam.netlify.app)
+
+## Screenshot
+
+![Portfolio Screenshot](images/screenshot.png)
