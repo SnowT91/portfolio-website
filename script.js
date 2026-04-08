@@ -1,5 +1,4 @@
 const themeToggle = document.getElementById('theme-toggle');
-
 const savedTheme = localStorage.getItem('theme');
 
 if (savedTheme === 'dark') {
@@ -17,4 +16,24 @@ themeToggle.addEventListener('click', () => {
         localStorage.setItem('theme', 'light');
         themeToggle.textContent = '🌙';
     }
+});
+
+const revealElements = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.15,
+  }
+);
+
+revealElements.forEach((element) => {
+  observer.observe(element);
 });
